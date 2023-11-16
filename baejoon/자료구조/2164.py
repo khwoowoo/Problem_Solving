@@ -2,14 +2,8 @@ from collections import deque
 
 cards = deque(range(1, int(input()) + 1))
 
-if len(cards) == 1:
-  print(cards.popleft())
-else:
-  while True:
+while len(cards) > 1:
     cards.popleft()
-    
-    if len(cards) == 1:
-      print(cards.popleft())
-      break
-  
     cards.append(cards.popleft())
+
+print(cards.popleft())
