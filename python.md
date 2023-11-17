@@ -45,7 +45,6 @@ for i in range(100):
 
 ```python
 arr = [[0] * m for _ in range(n)]
-arr = [ i for i in range (10) if i % 2 == 0]
 ```
 
 ## Stack, Queue
