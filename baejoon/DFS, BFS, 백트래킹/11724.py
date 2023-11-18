@@ -34,6 +34,7 @@ print(result)
 # 나랑 완전 전 반대의 답안
 import sys
 sys.setrecursinlimit(10 ** 6)
+input = sys.stdin.readline
 N, M = map(int, input().split())
 adj = [[0] * N for _ in range(N)]
 for _ in range(M):
