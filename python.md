@@ -155,7 +155,7 @@ print((lambda a, b: a + b)(3, 7))
     	return x[1]
     
     print(sorted(array, key=my_key))
-    print(sorted(array, (lambda x: x[1])))
+    print(sorted(array, key=lambda x: x[1]))
     ```
     
     - 여러 개 리스트에 적용
