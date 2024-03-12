@@ -11,7 +11,7 @@ a, b = map(int, input().split())
 
 ## 빠른 입출력 함수
 
-- input 함수가 느리기 때문에, sys의 `sys.stdin.readLine()` 를 사용.
+- input 함수가 느리기 때문에, sys의 `sys.stdin.readline()` 를 사용.
 
 ```python
 for i in range(100):
@@ -22,7 +22,7 @@ for i in range(100):
 import sys
 
 for i in range(100):
-	n = int(sys.stdin.readLine().rstrip())
+	n = int(sys.stdin.readline().rstrip())
 	print(n)
 
 # 간편하게 사용법
@@ -45,6 +45,7 @@ for i in range(100):
 
 ```python
 arr = [[0] * m for _ in range(n)]
+arr = [ i for i in range (10) if i % 2 == 0]
 ```
 
 ## Stack, Queue
@@ -173,72 +174,72 @@ print((lambda a, b: a + b)(3, 7))
 ## 실전에서 유용한 표준 라이브러리
 
 - 내장함수: 기본 입출력 함수부터 정렬 함수까지 기본적인 함수들을 제공
-    
-    ```python
-    result = sum([1, ,2 , 3, 4, 5])
-    print(result)
-    
-    min_result = min(7, 3, 5, 2)
-    max_result = max(7, 3, 5, 2)
-    print(min_result, max_result)
-    
-    result = eval("(3+5)*7")
-    print(result)
-    
-    result = sorted([9, 1, 8, 5, 4])
-    reverse_result = sorted([9, 1, 8, 5, 4], reverse = True)
-    print(result)
-    print(reverse_result)
-    
-    array = [('홍길동', 50), ('이순신', 32), ('아무개', 74)]
-    result = sorted(array, key=lambda x:x[1], reverse=True)
-    ```
-    
+
+```python
+result = sum([1, ,2 , 3, 4, 5])
+print(result)
+
+min_result = min(7, 3, 5, 2)
+max_result = max(7, 3, 5, 2)
+print(min_result, max_result)
+
+result = eval("(3+5)*7")
+print(result)
+
+result = sorted([9, 1, 8, 5, 4])
+reverse_result = sorted([9, 1, 8, 5, 4], reverse = True)
+print(result)
+print(reverse_result)
+
+array = [('홍길동', 50), ('이순신', 32), ('아무개', 74)]
+result = sorted(array, key=lambda x:x[1], reverse=True)
+```
+
 - itertools: 파이썬에서 반복되는 형태의 데이터를 처리하기 위한 유용한 기능들을 제공
     - 특히 순열과 조합 라이브러리는 코딩 테스트에서 자주 사용된다
     - 모든 경우의 수를 고려해야 할 때 어떤 라이브러리를 효과적으로 사용할 수 있을까?
     - 순열: 서로 다른 n개에서 서로 다른 r개를 선택하여 일렬로 나열하는 것
-    
-    ```python
-    from itertools import permutations
-    
-    data = ['A', 'B', 'C']
-    
-    result = list(permutations(data, 3))
-    print(result)
-    ```
-    
-    ```python
-    from itertools import combinations
-    
-    data = ['A', 'B', 'C']
-    
-    result = list(combinations(data, 2))
-    print(result)
-    ```
-    
-    ```python
-    from itertools import product
-    
-    data = ['A', 'B', 'C']
-    
-    #중복 순열
-    #2개를 뽑는 모든 순열 구하기 (중복 허용)
-    result = list(product(data, repear=2))
-    print(result)
-    ```
-    
-    ```python
-    from itertools import combinations_with_replacement
-    
-    data = ['A', 'B', 'C']
-    
-    #중복 조합
-    #2개를 뽑는 모든 조합 구하기 (중복 허용)
-    result = list(combinations_with_replacement(data, repear=2))
-    print(result)
-    ```
-    
+
+```python
+from itertools import permutations
+
+data = ['A', 'B', 'C']
+
+result = list(permutations(data, 3))
+print(result)
+```
+
+```python
+from itertools import combinations
+
+data = ['A', 'B', 'C']
+
+result = list(combinations(data, 2))
+print(result)
+```
+
+```python
+from itertools import product
+
+data = ['A', 'B', 'C']
+
+#중복 순열
+#2개를 뽑는 모든 순열 구하기 (중복 허용)
+result = list(product(data, repear=2))
+print(result)
+```
+
+```python
+from itertools import combinations_with_replacement
+
+data = ['A', 'B', 'C']
+
+#중복 조합
+#2개를 뽑는 모든 조합 구하기 (중복 허용)
+result = list(combinations_with_replacement(data, repear=2))
+print(result)
+```
+
 - heapq: 힙 자료구조를 제공한다
 - bisect: 이진 탐색 기능을 제공
 - collections: deque, Counter 등의 유용한 자료구조를 포함한다
@@ -254,14 +255,29 @@ print(dict(counter))
 
 - math: 필수적인 수학적 기능을 제공
     - 팩토리얼, 제곱근, GCD, 삼각함수 관련 함수, pi 같은 상수
-    
-    ```python
-    import math
-    
-    # 최소 공배수
-    def lcm(a, b)
-    	return a * b // math.gcd(a, b)
-    
-    print(math.gcd(a, b))
-    print(lcm(21, 14))
-    ```
+
+```python
+import math
+
+# 최소 공배수
+def lcm(a, b)
+	return a * b // math.gcd(a, b)
+
+print(math.gcd(a, b))
+print(lcm(21, 14))
+```
+
+## 재귀 함수 오류 해결
+
+- 재귀함수가 너무 오바 되면 오류남
+- 제한이 있어서
+
+```python
+import sys
+sys.setrecursionlimit(10 ** 7)
+```
+
+## 온라인 개발 환경
+
+- 리플릿
+[Python Online Compiler & Interpreter](https://replit.com/languages/python3)
