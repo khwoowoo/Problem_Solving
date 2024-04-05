@@ -4,14 +4,25 @@
 
 ```java
 import java.util.*;
+import java.lang.*;
 import java.io.*;
-import java.lang.Math;
 ```
 
 ## 입력
 
 ```java
-Scanner in = new Scanner(System.in); // Scanner 객체 생성
+//일반 입력
+Scanner sc = new Scanner(System.in);
+int N = sc.nextInt();
+int M = sc.nextInt();
+sc.nextLine();
+
+//빠른 입력
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+StringTokenizer st = new StringTokenizer(br.readLine());
+
+int N = Integer.parseInt(st.nextToken());
+int M = Integer.parseInt(st.nextToken());
 ```
 
 ## 변수 선언
