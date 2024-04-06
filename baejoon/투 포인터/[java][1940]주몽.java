@@ -1,3 +1,44 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// 투 포인터로 구현
+class Main {
+    public static void main(String[] args) throws IOException{
+        //입력
+        BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+        int N, M;
+        int[] A;
+        int count = 0;
+        N = Integer.parseInt(br.readLine().trim());
+        M = Integer.parseInt(br.readLine().trim());
+        int start = 0, end = N - 1;
+        A = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < N; i++) A[i] = Integer.parseInt(st.nextToken());
+
+        Arrays.sort(A);
+        while (start < end){
+            int cur = A[start] + A[end];
+            if (cur == M) {
+                count++;
+                start++;
+                end--;
+            }
+            else if(cur < M) start++;
+            else end--;
+            
+        }
+        System.out.println(count);
+    }
+}
+
+/*
+1 2 3 4 5 7
+*/
+
+
+
 //투 포인터로 어떻게 해야 될지 모르겠어서 일단 다른 방법으로 성공함.이 방법은 O(nlogn)
 import java.util.*;
 import java.lang.*;
