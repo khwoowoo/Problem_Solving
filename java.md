@@ -28,6 +28,14 @@ for(int i = 0; i < N; i++) A[i] = Integer.parseInt(st.nextToken());
 
 ```
 
+## 출력
+
+```java
+System.out.println(String.format("%d %d %d", A[i], target, Arrays.binarySearch(A, target)));
+System.out.println(Arrays.toString(A));
+System.out.println((int)(count / 2));
+```
+
 ## 변수 선언
 
 ```java
