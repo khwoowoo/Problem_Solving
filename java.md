@@ -164,6 +164,27 @@ for (String key : map.keySet()) {
 }
 ```
 
+## Stack
+
+```java
+// 스택 생성
+Stack<Integer> stack = new Stack<>();
+
+// 스택에 데이터 추가
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+// 스택의 가장 위에 있는 데이터 확인
+System.out.println("Stack top: " + stack.peek()); // 출력: 3
+
+// 스택에서 데이터 제거하면서 반환 받기
+while (!stack.isEmpty()) {
+    System.out.println(stack.pop());
+}
+
+// 이 시점에서 스택은 비어 있음
+```
 ## Queue
 
 ```java
