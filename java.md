@@ -19,10 +19,13 @@ sc.nextLine();
 
 //빠른 입력
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-StringTokenizer st = new StringTokenizer(br.readLine());
+N = Integer.parseInt(br.readLine().trim());
+M = Integer.parseInt(br.readLine().trim());
 
-int N = Integer.parseInt(st.nextToken());
-int M = Integer.parseInt(st.nextToken());
+//한 줄에 여러 개 입력받을 때
+StringTokenizer st = new StringTokenizer(br.readLine());
+for(int i = 0; i < N; i++) A[i] = Integer.parseInt(st.nextToken());
+
 ```
 
 ## 변수 선언
