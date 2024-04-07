@@ -34,6 +34,18 @@ for(int i = 0; i < N; i++) A[i] = Integer.parseInt(st.nextToken());
 System.out.println(String.format("%d %d %d", A[i], target, Arrays.binarySearch(A, target)));
 System.out.println(Arrays.toString(A));
 System.out.println((int)(count / 2));
+
+// StringBuilder 사용한 출력
+StringBuilder sb = new StringBuilder(); 
+for (int i = 0; i < M; i++) {
+    st = new StringTokenizer(br.readLine());
+    int x = Integer.parseInt(st.nextToken());
+    int y = Integer.parseInt(st.nextToken());
+    
+    sb.append(S[y] - S[x - 1]).append('\n'); 
+}
+
+System.out.println(sb.toString()); 
 ```
 
 ## 변수 선언
