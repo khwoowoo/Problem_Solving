@@ -1,3 +1,11 @@
+/*
+ 문제 접근을 잘 했는데 살짝의 실수로 gpt가 알려줌
+ 일단 number = number * 10 + B[i] 반복문인데 값 갱신되는 걸 실수함,,,
+ 깊이 값은 그냥 매번 자리수 개산하는 코드 작성했는데 depth로 간편하게 끝,,,
+
+ 깊이 값은 그렇다치고 number = number * 10 + B[i] 너무 어이없고 초보적인 실수함,,
+*/
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
