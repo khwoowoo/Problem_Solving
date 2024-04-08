@@ -15,10 +15,6 @@ class Main {
         }
         return true;
     }
-
-    public static int getCount(int number) {
-        return String.valueOf(number).length();
-    }
     
     public static void DFS(int number, int depth) {
         if (depth == N) {
@@ -77,8 +73,7 @@ if 소수 판별: return;
 if 자리수 판별: 출력 return;
 
 for i(1 ~ 5):
-number = number * 10 + B[i]
+temp = number * 10 + B[i]
 if 소수 판별:
-dfs(number)
-
+dfs(temp)
 */
