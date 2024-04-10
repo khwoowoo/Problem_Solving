@@ -57,7 +57,7 @@ int C = 2;
 int D = new int[D];
 ```
 
-## Arrays, sort, binary Search
+## Arrays
 
 ```java
 int A[] = {1, 2, 3, 4, 5};
@@ -92,12 +92,9 @@ System.out.println(list.size());
 
 ```java
 ArrayList<String> list = new ArrayList<>();
-
 list.add("ava");
 list.add(0, "c++");
-
 list.set(1, "java");
-
 list.remove(1); // 이 시점에서 리스트는 ["c++"]입니다.
 
 // 값 존재 유무 확인
@@ -111,7 +108,6 @@ while(it.hasNext()) {
     String element = it.next();
 }
 
-// ListIterator를 사용한 내림차순 순회는 ArrayList에서 지원하지 않음
 
 // 중복 없이 삽입
 String value = "some value";
@@ -121,6 +117,47 @@ if(list.indexOf(value) < 0) list.add(value);
 for(int i = 0; i < list.size(); i++) {
     String element = list.get(i);
 }
+
+
+//정렬
+//1. Collections.sort()
+Collections.sort(numbers); // 오름차순 정렬
+Collections.sort(numbers, Collections.reverseOrder()); // 커스텀 정렬 (예: 내림차순)
+
+//2. List.sort()
+numbers.sort(null); // 오름차순 정렬
+numbers.sort(Collections.reverseOrder()); // 커스텀 정렬 (예: 내림차순)
+
+//3. 스트림 API 사용 
+List<Integer> sortedNumbers = numbers.stream() // 오름차순 정렬
+    .sorted()
+    .collect(Collectors.toList());
+List<Integer> sortedNumbersDesc = numbers.stream() // 커스텀 정렬 (예: 내림차순)
+    .sorted(Collections.reverseOrder())
+    .collect(Collectors.toList());
+
+
+
+//binarySearch 이진 탐색 수행
+int index = Collections.binarySearch(list, 5);
+
+if (index >= 0) {
+    System.out.println("Element found at index: " + index);
+} else {
+    System.out.println("Element not found. Insertion point: " + (-index - 1));
+}
+
+
+
+// 배열로 변환
+List<String> list = new ArrayList<>();
+list.add("Apple");
+list.add("Banana");
+list.add("Cherry");
+
+// 타입이 명확한 배열로 변환
+String[] array = list.toArray(new String[0]); // 크기가 0인 배열을 넘겨도 됩니다.
+
 
 ```
 
