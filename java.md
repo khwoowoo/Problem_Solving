@@ -164,26 +164,35 @@ String[] array = list.toArray(new String[0]); // 크기가 0인 배열을 넘겨
 ## String
 
 ```java
-String str1 = "Coding Test";
+// 문자열 슬라이싱 (부분 문자열 추출)
+String str = "Hello, World!";
+String sliced = str.substring(7, 12); // "World"
 
-// 자르기
-String[] words = str1.split(" ");
-String part = str1.substring(0, 5);
-for (int i = 0; i < str1.length(); i++) {
-    char c = str1.charAt(i);
-}
+// 문자 접근
+char ch = str.charAt(1); // 'e'
 
 // 문자열을 배열로 변경
 String str2 = "12345";
 String[] A = str2.split("");
+char[] charArray = str2.toCharArray(); // 문자열을 char 배열로 변환
 
-// 대소문자 변경
-str1 = str1.toUpperCase();
-str1 = str1.toLowerCase();
+// 문자열 변형
+String lower = str.toLowerCase(); // "hello, world!"
+String upper = str.toUpperCase(); // "HELLO, WORLD!"
+String noSpaces = "  Hello, World!  ".trim(); // "Hello, World!"
 
 // 문자열 변경
 String name = "starfcks";
 String newName = name.substring(0, 4) + "b" + name.substring(5);
+
+// 문자열 비교
+boolean result = "Hello".equals("hello"); // false
+boolean resultIgnoreCase = "Hello".equalsIgnoreCase("hello"); // true
+
+// 문자열 검색
+boolean contains = str.contains("World"); // true
+boolean starts = str.startsWith("Hello"); // true
+boolean ends = str.endsWith("!"); // true
 
 ```
 
