@@ -60,7 +60,7 @@ int D = new int[D];
 ## Arrays
 
 ```java
-int A[] = {1, 2, 3, 4, 5};
+Integer A[] = {1, 2, 3, 4, 5};
 
 // 정렬
 Arrays.sort(A); // 오름차순
