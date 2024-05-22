@@ -1,3 +1,58 @@
+//다시 풀기
+//한 번에 성공공
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// The main method must be in a class named "Main".
+class Main {
+    static class Node{
+        public int abs;
+        public int origin;
+
+        Node(int abs, int origin){
+            this.abs = abs;
+            this.origin = origin;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        StringBuilder sb = new StringBuilder();
+        PriorityQueue<Node> pr = new PriorityQueue<>((a, b) -> {
+            if (a.abs == b.abs) return a.origin - b.origin;
+
+            return a.abs - b.abs;
+        });
+
+        for(int i = 0; i < N; i++){
+            int x = sc.nextInt();
+
+            if(x == 0){
+                int temp = 0;
+                if(pr.size() != 0) temp = pr.poll().origin;
+                sb.append(temp).append('\n');
+            } 
+            else{
+                pr.add(new Node(Math.abs(x), x));
+            }
+        }
+
+        System.out.println(sb.toString());
+        
+    }
+}
+
+/*
+이 문제를 우선 순위 큐를 사용하고 비교하는 함수를 따로 구현하는 되는 문제
+출력은 한 번에 출력하는 StringBuilder 방식을 사용하는 게 좋을 듯?
+
+
+*/
+
+
+
+
 //비교하는 방법이 아래 주석과 같은 부분인데
 //비효율적이라서 gpt가 고쳐줌...
 import java.util.*;
