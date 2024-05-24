@@ -151,7 +151,8 @@ List<Integer> sortedNumbersDesc = numbers.stream() // 커스텀 정렬 (예: 내
     .sorted(Collections.reverseOrder())
     .collect(Collectors.toList());
 
-
+//4. 커스텀 정렬
+Collections.sort(numbers, (a, b) -> (b + a).compareTo(a + b));
 
 //binarySearch 이진 탐색 수행
 int index = Collections.binarySearch(list, 5);
@@ -172,8 +173,6 @@ list.add("Cherry");
 
 // 타입이 명확한 배열로 변환
 String[] array = list.toArray(new String[0]); // 크기가 0인 배열을 넘겨도 됩니다.
-
-
 ```
 
 ## String
@@ -208,6 +207,10 @@ boolean resultIgnoreCase = "Hello".equalsIgnoreCase("hello"); // true
 boolean contains = str.contains("World"); // true
 boolean starts = str.startsWith("Hello"); // true
 boolean ends = str.endsWith("!"); // true
+
+
+//구분 문자를 넣어서 보여주고 싶을 때
+String.join("", strList);
 
 ```
 
